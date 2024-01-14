@@ -1,6 +1,7 @@
 import Interfaces.Block;
 import Interfaces.CompositeBlock;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CompositeBlockImplementation implements CompositeBlock {
@@ -9,8 +10,8 @@ public class CompositeBlockImplementation implements CompositeBlock {
     private String color;
     private String material;
 
-    public CompositeBlockImplementation(List<Block> blocks, String color, String material) {
-        this.blocks = blocks;
+    public CompositeBlockImplementation(String color, String material) {
+        this.blocks = new ArrayList<>();
         this.color = color;
         this.material = material;
     }
