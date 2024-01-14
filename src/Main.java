@@ -12,12 +12,15 @@ public class Main {
         blocks.add(new BlockImplementation("violet", "dust"));
         blocks.add(new BlockImplementation("red", "dust"));
 
-        List<Block> compositeBlocks = new ArrayList<>();
-        compositeBlocks.add(new BlockImplementation("yellow", "concrete"));
-        compositeBlocks.add(new BlockImplementation("yellow", "concrete"));
+        CompositeBlockImplementation compositeBlock = new CompositeBlockImplementation("yellow", "concrete");
+        compositeBlock.addBlock(new BlockImplementation("yellow", "concrete"));
+        compositeBlock.addBlock(new BlockImplementation("yellow", "concrete"));
 
-        blocks.add(new CompositeBlockImplementation("yellow", "concrete"));
-        blocks.addAll(compositeBlocks);
+        BlockImplementation blockToRemove = new BlockImplementation("yellow", "concrete");
+        compositeBlock.addBlock(blockToRemove);
+        compositeBlock.removeBlock(blockToRemove);
+
+        blocks.addAll(compositeBlock.getBlocks());
 
         Wall firstWall = new Wall(blocks);
 

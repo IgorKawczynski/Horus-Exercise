@@ -16,6 +16,14 @@ public class CompositeBlockImplementation implements CompositeBlock {
         this.material = material;
     }
 
+    public void addBlock(Block block) {
+        blocks.add(block);
+    }
+
+    public void removeBlock(Block block) {
+        blocks.remove(block);
+    }
+
     @Override
     public List<Block> getBlocks() {
         return blocks;
